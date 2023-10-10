@@ -101,6 +101,7 @@ def change_note(file_name):
         tempsplit = temp[x-1].split(";")
         y = int(input('Сhoos\n1)Title\n2)The note: '))
         change = input('Enter the change we will make: ')
+        tempsplit[1] = "Date: " + str.format("{} {}", dt.datetime.now().date(), dt.datetime.now().strftime("%H:%M:%S")) + ";"
         tempsplit[y+1] = change
         for i in range(len(data)):
             if data[i] == temp[x-1]:
